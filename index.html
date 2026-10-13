@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff477e">
+  <title>Something Special for You ❤️ | @coding.ratno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hearts" id="hearts"></div>
+
+  <audio id="loveMusic" loop>
+    <source src="Be Intehaan.mp3.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 1. Welcome Page -->
+  <section class="page active" id="welcome">
+    <div class="card">
+      <div class="emoji">💌</div>
+      <p class="small-text">HEY BEAUTIFUL!</p>
+      <h1>I Have Something<br>Special for You ❤️</h1>
+      <p>Someone made a little surprise just for you...</p>
+      <button class="primary-btn" onclick="showPage('proposal')">
+        Open Your Surprise 💗
+      </button>
+    </div>
+  </section>
+
+  <!-- 2. Proposal Page -->
+  <section class="page" id="proposal">
+    <div class="card">
+      <div class="emoji">💖</div>
+      <p class="small-text">A LITTLE QUESTION</p>
+      <h1>Will You Accept<br>My Love? 🥹</h1>
+      <p>You've made my world a little more beautiful.</p>
+
+      <div class="button-row">
+        <button class="primary-btn" onclick="acceptLove()">
+          YES! ❤️
+        </button>
+
+        <button class="no-btn" id="noBtn">
+          NO 🙈
+        </button>
+      </div>
+      <p class="tiny">Psst... try tapping NO! 😉</p>
+    </div>
+  </section>
+
+  <!-- 3. Love Letter -->
+  <section class="page" id="letter">
+    <div class="card">
+      <div class="emoji">💌</div>
+      <p class="small-text">FROM MY HEART</p>
+      <h1>Dear Beautiful, ❤️</h1>
+
+      <div class="letter-box">
+        <p>
+          I may not always find the perfect words to express my feelings,
+          but I want you to know that you are truly special to me.
+        </p>
+        <p>
+          Your smile makes ordinary moments beautiful.
+          Your happiness matters to me, and every little thing about you
+          gives me another reason to smile.
+        </p>
+        <p>
+          I don't promise to be perfect. I promise to listen, care,
+          respect you and keep choosing you with an honest heart.
+        </p>
+        <p class="signature">With all my heart, ❤️<br>Your Special Someone</p>
+      </div>
+
+      <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+        🎵 Play Our Song
+      </button>
+
+      <button class="primary-btn" onclick="showPage('reasons')">
+        Discover Why I Love You 💗
+      </button>
+    </div>
+  </section>
+
+  <!-- 4. Reasons -->
+  <section class="page" id="reasons">
+    <div class="card wide-card">
+      <div class="emoji">🥰</div>
+      <h1>4 Reasons Why I Love You</h1>
+      <p>Tap each card to discover a little secret. 💌</p>
+
+      <div class="reason-grid">
+        <button class="reason-card" data-reason="smile">
+          😊<span>Your Smile</span>
+        </button>
+        <button class="reason-card" data-reason="care">
+          🫶<span>Your Care</span>
+        </button>
+        <button class="reason-card" data-reason="laugh">
+          😂<span>Your Laugh</span>
+        </button>
+        <button class="reason-card" data-reason="you">
+          💖<span>Just You</span>
+        </button>
+      </div>
+
+      <div class="reason-note" id="reasonNote" aria-live="polite">
+        Choose a card above. ❤️
+      </div>
+
+      <button class="primary-btn" onclick="showPage('gallery')">
+        One More Surprise 🎁
+      </button>
+    </div>
+  </section>
+
+  <!-- 5. Her Gallery -->
+  <section class="page" id="gallery">
+    <div class="card wide-card">
+      <div class="emoji">🌸</div>
+      <p class="small-text">JUST FOR YOU</p>
+      <h1>My Favourite Girl ❤️</h1>
+      <p>Five little glimpses of someone truly special.</p>
+
+      <div class="gallery">
+        <figure>
+          <img src="img4.jpeg" alt="Her photo 1">
+          <figcaption>Your smile is magic. 💗</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img5.jpeg" alt="Her photo 2">
+          <figcaption>Beautiful in your own way. 🌸</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img3.jpeg" alt="Her photo 3">
+          <figcaption>A face that makes me smile. 😊</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img1.jpeg" alt="Her photo 4">
+          <figcaption>My favourite kind of happiness. 🥰</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img2.jpeg" alt="Her photo 5">
+          <figcaption>Simply, wonderfully you. ❤️</figcaption>
+        </figure>
+      </div>
+
+      <button class="primary-btn" onclick="showPage('date')">
+        Let's Plan Our Date 📅
+      </button>
+    </div>
+  </section>
+
+  <!-- 6. Date Planning -->
+  <section class="page" id="date">
+    <div class="card wide-card">
+      <div class="emoji">🌹</div>
+      <h1>Our Dream Date</h1>
+      <p>You choose the plan, beautiful! 💗</p>
+
+      <form id="dateForm">
+        <label for="dateInput">📅 Choose a Date</label>
+        <input type="date" id="dateInput" required>
+
+        <label for="timeInput">⏰ Choose a Time</label>
+        <input type="time" id="timeInput" required>
+
+        <label for="dateType">💖 What Kind of Date?</label>
+        <select id="dateType" required>
+          <option value="">Choose your favourite</option>
+          <option>Movie Date 🎬</option>
+          <option>Pizza Date 🍕</option>
+          <option>Coffee Date ☕</option>
+          <option>Romantic Dinner 🌹</option>
+          <option>Long Walk Together 🚶</option>
+          <option>Ice Cream Date 🍦</option>
+          <option>Something Else ✨</option>
+        </select>
+
+        <label for="placeInput">📍 Where Would You Like to Go?</label>
+        <input
+          type="text"
+          id="placeInput"
+          placeholder="Enter your favourite place"
+          required
+        >
+
+        <label for="wishInput">💌 A Special Wish (Optional)</label>
+        <textarea
+          id="wishInput"
+          placeholder="Anything you want to tell me..."
+          rows="3"
+        ></textarea>
+
+        <button type="submit" class="primary-btn">
+          Create Our Date Plan 💕
+        </button>
+      </form>
+
+      <div id="dateResult" class="date-result" hidden>
+        <h2>💌 Our Dream Date Plan</h2>
+        <pre id="dateMessage"></pre>
+        <button class="whatsapp-btn" id="whatsappBtn">
+          Send on WhatsApp 💚
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final Surprise -->
+  <section class="page" id="final">
+    <div class="card">
+      <div class="emoji">🎁</div>
+      <p class="small-text">ONE LAST LITTLE SURPRISE</p>
+      <h1>A Promise From My Heart ❤️</h1>
+
+      <button class="envelope" id="envelopeBtn" aria-expanded="false">
+        💌
+        <span>Tap to open your letter</span>
+      </button>
+
+      <div class="promise-letter" id="promiseLetter" hidden>
+        <p>
+          No matter how many surprises I create for you,
+          my favourite part of every day will always be YOU. ❤️
+        </p>
+        <p>
+          I promise to respect your feelings, celebrate your happiness
+          and be honest with you. You deserve love that makes you
+          feel safe, valued and appreciated.
+        </p>
+        <h2>You're special. Always remember that. 💖</h2>
+      </div>
+
+      <button class="primary-btn" onclick="restartStory()">
+        Replay Our Love Story 💞
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
